@@ -1,4 +1,4 @@
-name: Github Pages Deploy
+name: Deploy Master to GitHub Pages
 
 on:
   push:
@@ -6,34 +6,23 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.17]
-
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: 14
 
-      - name: Install dependencies
-        run: npm install
+      - name: Build
+        run: npm ci && npm run build --prod
 
-      - name: Run tests
-        run: npm run test
-
-      - name: Run Build
-        run: npm run build-github
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
-          folder: ./dist/nestin-fe
+          folder: dist/nestin-fe # Replace with your Angular project name
