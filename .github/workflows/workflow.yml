@@ -29,7 +29,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: build-folder
+          name: github-pages
           path: dist/nestin-fe
 #      - name: Deploy to GitHub Pages
 #        uses: JamesIves/github-pages-deploy-action@4.1.0
