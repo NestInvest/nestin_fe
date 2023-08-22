@@ -1,0 +1,28 @@
+name: Github Pages Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.17]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install and build
+        working-directory: ./frontend
+        run: npm install && npm run build-github && cp dist/nestin-fe/index.html dist/nestin-fe/404.html
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: ./frontend/dist/nestin-fe
