@@ -31,12 +31,6 @@ jobs:
         with:
           name: github-pages
           path: dist/nestin-fe
-#      - name: Deploy to GitHub Pages
-#        uses: JamesIves/github-pages-deploy-action@4.1.0
-#        with:
-#          branch: gh-pages
-#          folder: dist/nestin-fe # Replace with your Angular project name
-
   deploy:
     name: Deploy
     needs: build
