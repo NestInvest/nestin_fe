@@ -1,0 +1,35 @@
+  {
+    "propertyId": "12345",
+    "propertyName": "Bla Bla",
+    "propertyType": "Single Family House",
+    "price": "$350,000",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": "1,800 sqft",
+    "location": {
+      "address": "123 Main Street",
+      "city": "Exampleville",
+      "state": "CA",
+      "zipcode": "12345",
+      "country": "United States"
+    },
+    "description": "Welcome to this charming family home with a spacious backyard and modern amenities...",
+    "features": [
+      "Open-concept layout",
+      "Hardwood floors",
+      "Walk-in closets",
+      "Two-car garage",
+      "Central heating and cooling",
+      "Fenced backyard"
+    ],
+    "images": [
+      "image_url_1.jpg",
+      "image_url_2.jpg",
+      "image_url_3.jpg"
+    ],
+    "contact": {
+      "agentName": "John Smith",
+      "agentPhone": "(123) 456-7890",
+      "agentEmail": "john.smith@example.com"
+    }
+  }
