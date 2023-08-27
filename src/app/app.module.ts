@@ -10,12 +10,19 @@ import {HeaderComponent} from './widgets/header/header.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ConfigService} from "./config/config.service";
 import {CardModule} from "primeng/card";
+import {ImageModule} from "primeng/image";
+import { NCardComponent } from './widgets/n-card/n-card.component';
+import {DataViewModule} from "primeng/dataview";
+import {RatingModule} from "primeng/rating";
+import {TagModule} from "primeng/tag";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    NCardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +31,11 @@ import {CardModule} from "primeng/card";
     InputTextModule,
     HttpClientModule,
     CardModule,
+    ImageModule,
+    DataViewModule,
+    RatingModule,
+    TagModule,
+    FormsModule,
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]
