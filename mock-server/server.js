@@ -8,14 +8,14 @@ server.use(jsonServer.bodyParser);
 const data = require('./index')
 
 
-server.get('/api/db', (req, res, next) => {
-  res.status(200).send(data.getDb);
-});
-
 server.get('/api/property/:id', (req, res, next) => {
   const id = req.params.id;
   res.status(200).send(data.getById(id));
 });
+server.get('/api/properties', (req, res, next) => {
+  res.status(200).send(data.getProperties);
+});
+
 
 server.listen(3000, ()=>{
   console.log('JSON server listening on port 3000')

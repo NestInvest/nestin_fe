@@ -1,6 +1,6 @@
 export interface PropertyDetailModel{
   id: number;
-  name: string;
+  propertyName: string;
   address: string;
   price: number;
 }
