@@ -1,6 +1,24 @@
 
-<div class="surface-card p-4 shadow-2 border-round">
-  <div class="text-3xl font-medium text-900 mb-3">Card Title</div>
-  <div class="font-medium text-500 mb-3">Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.</div>
-  <div style="height: 150px" class="border-2 border-dashed surface-border"></div>
-</div>
+<p-dataView #dv [value]="allProperties" [rows]="5" [paginator]="true">
+  <ng-template let-property pTemplate="listItem">
+    <div class="col-12 p-2 gap-4">
+      <div class="flex flex-column xl:flex-row xl:align-items-start shadow-2">
+        <img class="w-9 sm:w-16rem xl:w-10rem block xl:block mx-auto border-round" [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1199px-Cat03.jpg'"/>
+        <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+            <div class="text-2xl font-bold text-900">{{ property.propertyName }}</div>
+            <div class="flex align-items-center gap-3">
+                            <span class="flex align-items-center gap-2">
+                                <i class="pi pi-tag"></i>
+                                <span class="font-semibold">{{ property.address }}</span>
+                            </span>
+            </div>
+          </div>
+          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+            <span class="text-2xl font-semibold">{{ '$' + property.price }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
