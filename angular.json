@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/nesting_fe/",
+            "baseHref": "/nestin_fe/",
             "outputPath": "dist/nestin-fe",
             "index": "src/index.html",
             "main": "src/main.ts",
