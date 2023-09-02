@@ -1,10 +1,27 @@
-<div class="card">
-  <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-      <img alt="logo" src="../../../assets/logo_main.png" height="40" class="mr-2" />
-    </ng-template>
-    <ng-template pTemplate="end">
-      <input type="text" pInputText placeholder="Search" class="w-full" />
-    </ng-template>
-  </p-menubar>
-</div>
+<p-menubar
+  [model]="items"
+  [style]="{
+    background: '#fff',
+    border: 'none',
+    padding: 0
+  }"
+>
+  <ng-template pTemplate="start">
+    <a
+      routerLink="/"
+    >
+
+      <p-image [src]="'../../assets/logo_main.png'" alt="Image" width="40" imageClass="mr-2"></p-image>
+    </a>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div>
+      <p-avatar
+        label="U"
+        size="large"
+        [style]="{ 'background-color': '#4caf4f', color: '#ffffff' }"
+        shape="square"
+      ></p-avatar>
+    </div>
+  </ng-template>
+</p-menubar>

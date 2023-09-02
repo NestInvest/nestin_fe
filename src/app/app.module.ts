@@ -48,6 +48,14 @@ import {NgOptimizedImage} from "@angular/common";
     RatingModule,
     TagModule,
     FormsModule,
+    AnimateModule,
+    CarouselModule,
+    ButtonModule,
+    AvatarModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    BadgeModule,
+    NgOptimizedImage
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]
