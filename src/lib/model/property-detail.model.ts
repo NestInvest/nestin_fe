@@ -5,9 +5,19 @@ export interface PropertyDetailModel {
   price: number;
   bedrooms: number;
   bathrooms: number;
-  location: string[];
+  location: {
+    address: string;
+    city: string;
+    state: string;
+    zipcode: string;
+    country: string;
+  }
   area: string;
   description: string;
   features: string[];
-  contact: string[];
+  contact: {
+    agentName: string;
+    agentPhone: string;
+    agentMail: string;
+  };
 }

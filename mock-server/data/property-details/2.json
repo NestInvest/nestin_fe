@@ -2,7 +2,7 @@
   "propertyId": "67890",
   "propertyName": "Modern Downtown Loft",
   "propertyType": "Condo",
-  "price": "$500,000",
+  "price": "500,000",
   "bedrooms": 2,
   "bathrooms": 2,
   "area": "1,200 sqft",
@@ -13,7 +13,7 @@
     "zipcode": "56789",
     "country": "United States"
   },
-  "description": "Experience urban living at its best in this modern downtown loft...",
+  "description": "Property located in the countryside between Santa Gertrudis and San Miguel, surrounded by meadows and fruit fields, close to the beaches of the north of the island.\n\n",
   "features": [
     "Open loft design",
     "Floor-to-ceiling windows",
