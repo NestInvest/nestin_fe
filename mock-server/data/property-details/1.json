@@ -22,7 +22,7 @@
     "Central heating and cooling",
     "Fenced backyard"
   ],
-  "images": ["image_url_1.jpg", "image_url_2.jpg", "image_url_3.jpg"],
+  "images": ["1.jpg", "2.jpg", "3.jpg"],
   "contact": {
     "agentName": "John Smith",
     "agentPhone": "(123) 456-7890",

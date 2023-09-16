@@ -12,10 +12,16 @@ server.get('/api/property/:id', (req, res, next) => {
   const id = req.params.id;
   res.status(200).send(data.getById(id));
 });
+
 server.get('/api/properties', (req, res, next) => {
   res.status(200).send(data.getProperties);
 });
 
+
+server.get('/images/:id', (req, res, next) => {
+  const id = req.params.id;
+  res.status(200).send(data.getImageById(id));
+});
 
 server.listen(3000, ()=>{
   console.log('JSON server listening on port 3000')

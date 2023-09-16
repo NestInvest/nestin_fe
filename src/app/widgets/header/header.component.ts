@@ -10,13 +10,14 @@ export class HeaderComponent implements OnInit{
   items: MenuItem[] | undefined;
 
   ngOnInit() {
+    // TODO: Change by permission
     this.items = [
       {
         label: 'Status',
         icon: 'pi pi-fw pi-chart-bar',
         styleClass: 'right-icon',
         routerLink: 'status',
-        disabled: true
+        visible: false
       },
       {
         label: 'Invest',
@@ -29,7 +30,7 @@ export class HeaderComponent implements OnInit{
         icon: 'pi pi-fw pi-home',
         styleClass: 'right-icon',
         routerLink: 'publish',
-        disabled: true
+        visible: false
       },
     ]
   }

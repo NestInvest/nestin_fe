@@ -20,4 +20,5 @@ export interface PropertyDetailModel {
     agentPhone: string;
     agentEmail: string;
   };
+  images: string[];
 }
