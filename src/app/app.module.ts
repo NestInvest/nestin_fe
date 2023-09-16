@@ -26,6 +26,9 @@ import {DialogModule} from "primeng/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BadgeModule} from "primeng/badge";
 import {NgOptimizedImage} from "@angular/common";
+import {GalleriaModule} from "primeng/galleria";
+import { ErrorComponent } from './widgets/error/error.component';
+import {MessagesModule} from "primeng/messages";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {NgOptimizedImage} from "@angular/common";
     HeaderComponent,
     CardComponent,
     InvestPageComponent,
-    ProperyDetailPageComponent
+    ProperyDetailPageComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import {NgOptimizedImage} from "@angular/common";
     DialogModule,
     BrowserAnimationsModule,
     BadgeModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    GalleriaModule,
+    MessagesModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

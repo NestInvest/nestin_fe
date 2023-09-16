@@ -1,1 +1,22 @@
-<p>propery-detail-page works!</p>
+<div *ngIf="!isLoading && !failed; else PROGRESS ">
+  <h1>{{property?.propertyName}}</h1>
+  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"  [containerStyle]="{ 'max-width': '640px' }" [numVisible]="1">
+    <ng-template pTemplate="item" let-item>
+      <img alt="detailedPageImages" [src]="item['previewImageSrc']" style="width: 100%;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="grid grid-nogutter justify-content-center">
+        <img alt="detailedPageImages" [src]="item['previewImageSrc']" />
+      </div>
+    </ng-template>
+  </p-galleria>
+</div>
+<ng-template #PROGRESS>
+
+  <div *ngIf="isLoading && !failed">
+    <h1>Loading...</h1>
+  </div>
+  <div *ngIf="failed">
+    <h1>Failed</h1>
+  </div>
+</ng-template>
