@@ -29,6 +29,8 @@ import {NgOptimizedImage} from "@angular/common";
 import {GalleriaModule} from "primeng/galleria";
 import { ErrorComponent } from './widgets/error/error.component';
 import {MessagesModule} from "primeng/messages";
+import { IntroComponent } from './widgets/intro/intro.component';
+import {NgParticlesModule} from "ng-particles";
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import {MessagesModule} from "primeng/messages";
     BadgeModule,
     NgOptimizedImage,
     GalleriaModule,
-    MessagesModule
+    MessagesModule,
+    NgParticlesModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]
