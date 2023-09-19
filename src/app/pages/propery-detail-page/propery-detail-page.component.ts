@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../../config/config.service';
 import { ActivatedRoute } from '@angular/router';
 import { PropertyDetailModel } from '../../../lib/model/property-detail.model';
-import {environment} from "../../../environments/environment";
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'nes-propery-detail-page',
@@ -12,9 +12,9 @@ import {environment} from "../../../environments/environment";
 export class ProperyDetailPageComponent implements OnInit {
   isLoading = true;
   failed = false;
-  responsiveOptions: any[] = [];
   images: any[] = [];
   property: PropertyDetailModel | undefined;
+  responsiveOptions: any[] | undefined;
 
   constructor(
     private configService: ConfigService,

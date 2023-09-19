@@ -1,22 +1,69 @@
-<div *ngIf="!isLoading && !failed; else PROGRESS ">
-  <h1>{{property?.propertyName}}</h1>
-  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"  [containerStyle]="{ 'max-width': '640px' }" [numVisible]="1">
-    <ng-template pTemplate="item" let-item>
-      <img alt="detailedPageImages" [src]="item['previewImageSrc']" style="width: 100%;" />
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-      <div class="grid grid-nogutter justify-content-center">
-        <img alt="detailedPageImages" [src]="item['previewImageSrc']" />
+<div class="card md:flex md:justify-content-between">
+  <div class="pr-4" *ngIf="!isLoading && !failed; else PROGRESS">
+    <h1>{{ property?.propertyName }}</h1>
+    <p-galleria
+      [value]="images"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+      [responsiveOptions]="responsiveOptions"
+      [circular]="true"
+      [containerStyle]="{ 'max-width': '768px' }"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img class="border-round"
+          alt="detailedPageImages"
+          [src]="item['previewImageSrc']"
+          style="width: 100%; display: block"
+        />
+      </ng-template>
+    </p-galleria>
+  </div>
+  <div class="text-right">
+      <div>
+        <h1 class="m-0">
+          {{ property?.propertyName }}
+        </h1>
+        <h4 class="m-0 font-normal font-bold text-color-secondary">
+          {{ property?.location?.address }}, {{ property?.location?.city }},
+          {{ property?.location?.zipcode }},
+          {{ property?.location?.state }}
+        </h4>
+        <div class="gap-2 flex">
+          <p class="align-self-center m-0 font-bold">
+            {{ property?.area + " m²" }}
+          </p>
+          <a
+                  class="no-underline text-lg hover:underline text-blue-400"
+          >Show on map</a
+          >
+        </div>
       </div>
-    </ng-template>
-  </p-galleria>
-</div>
-<ng-template #PROGRESS>
+      <div class="flex flex-column">
+        <h3 class="m-0 mt-2 font-bold">Description</h3>
+        <p class="m-0 font-medium">{{ property?.description }}</p>
+      </div>
+      <div class="flex align-items-center gap-3">
+        <div>
+          <h3 class="m-0 mt-2 font-bold">Contacts</h3>
+          <p class="m-0 font-normal font-normal">
+            {{ property?.contact?.agentName }},
+            {{ property?.contact?.agentPhone }},
+            {{ property?.contact?.agentEmail }}
+          </p>
+        </div>
+      </div>
+      <div
+              class="flex flex-column p-3 width-256 justify-content-between col-5"
+      ></div>
 
+  </div>
+</div>
+
+<ng-template #PROGRESS>
   <div *ngIf="isLoading && !failed">
     <h1>Loading...</h1>
   </div>
   <div *ngIf="failed">
-    <h1>Failed</h1>
+    <nes-error></nes-error>
   </div>
 </ng-template>

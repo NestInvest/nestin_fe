@@ -38,7 +38,8 @@ import {MessagesModule} from "primeng/messages";
     CardComponent,
     InvestPageComponent,
     ProperyDetailPageComponent,
-    ErrorComponent
+    ErrorComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
