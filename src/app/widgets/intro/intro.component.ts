@@ -24,7 +24,7 @@ export class IntroComponent {
     },
     fpsLimit: 60,
     fullScreen: {
-      enable: false,
+      enable: true,
     },
     interactivity: {
       events: {
@@ -88,6 +88,7 @@ export class IntroComponent {
     },
     detectRetina: true,
   };
+
 
   particlesLoaded(container: Container): void {
     console.log(container);
