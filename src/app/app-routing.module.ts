@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { InvestPageComponent } from './pages/invest-page/invest-page.component';
 import { ProperyDetailPageComponent } from './pages/propery-detail-page/propery-detail-page.component';
-import {ErrorComponent} from "./widgets/error/error.component";
+import {NotfoundPageComponent} from "./pages/error-pages/notfound-page/notfound-page.component";
 
 const routes: Routes = [
   {
@@ -15,10 +15,13 @@ const routes: Routes = [
     component: ProperyDetailPageComponent,
   },
   {
+    path: '404',
+    component: NotfoundPageComponent,
+  },
+  {
     path: '**',
     component: LandingPageComponent,
   },
-  { path: 'error', component: ErrorComponent },
 ];
 
 @NgModule({
