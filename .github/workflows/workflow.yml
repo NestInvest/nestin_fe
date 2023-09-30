@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build --base-href=/nestin_fe/
+        run: npm run build --base-href=/nestin_fe/ --configuration=production
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v1

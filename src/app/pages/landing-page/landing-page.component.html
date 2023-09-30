@@ -1,25 +1,9 @@
+
+<nes-intro ></nes-intro>
 <div class="card">
-  <div class="pb-5"></div>
-  <div class="card-container yellow-container">
-    <div class="block bg-gray-500 font-bold text-center p-4 border-round mb-3">
-      <h1>Are you tired of being gay?!</h1>
-    </div>
-    <div class="block bg-blue-500 font-bold p-4 border-round mb-3">
-      <h2>About Lawyer</h2>
-      <p>Description blah blah blah bullshit goes here</p>
-    </div>
-
-    <div class="block font-bold text-center p-4 mb-3">
-      <h2>Where can I scam?</h2>
-      <p>Energy efficiency</p>
-      <span>Energy efficiency</span>
-    </div>
-  </div>
-
-
   <p-dataView [value]="allProperties" [rows]="5" [paginator]="true">
     <ng-template let-property pTemplate="listItem">
-      <nes-card class="col-12 p-2 gap-4" [property]="property"></nes-card>
+      <nes-card class="col-12 pb-3" [property]="property"></nes-card>
     </ng-template>
   </p-dataView>
 </div>

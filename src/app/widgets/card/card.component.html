@@ -1,15 +1,19 @@
 <div
-  class="sm:flex xl:flex-row xl:align-items-start shadow-2 border-round animation-duration-1000 animation-ease-out"
+  class="flex shadow-2 border-round animation-duration-1000 animation-ease-out card"
 >
-  <p-image
-    imageClass="w-14rem sm:w-16rem xl:w-18rem block xl:block mx-auto sm:border-round-left"
-    [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1199px-Cat03.jpg'"
-  ></p-image>
-  <div
-    class="sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 m-4"
-  >
-    <div class="col-6 flex flex-column align-items-center sm:align-items-start">
-      <div >
+  <div class="md:col-3 p-0">
+    <img
+      alt="preview"
+      class="border-round-left image-fit"
+      [src]="
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1199px-Cat03.jpg'
+      "
+    />
+  </div>
+
+  <div class="flex justify-content-between md:flex-grow-1 p-3">
+    <div class="col-7">
+      <div>
         <h1 class="m-0" (click)="openDetail(property?.propertyId!)">
           {{ property?.propertyName }}
         </h1>
@@ -19,29 +23,52 @@
           {{ property?.location?.state }}
         </h4>
         <div class="gap-2 flex">
-          <p class="align-self-center m-0 font-bold">{{ property?.area + " m²" }}</p>
-          <a class="no-underline text-lg hover:underline text-blue-400" (click)="openMap()">Show on map</a>
+          <p class="align-self-center m-0 font-bold">
+            {{ property?.area + " m²" }}
+          </p>
+          <a
+            class="no-underline text-lg hover:underline text-blue-400"
+            (click)="openMap()"
+            >Show on map</a
+          >
         </div>
       </div>
-      <div class="flex flex-column align-items-center sm:align-items-start">
-        <h2 class="m-0 mt-2 font-bold">Description</h2>
-        <p class="m-0 font-normal font-semibold">{{ property?.description }}</p>
+      <div class="flex flex-column">
+        <h3 class="m-0 mt-2 font-bold">Description</h3>
+        <p class="m-0 font-medium">{{ property?.description }}</p>
       </div>
       <div class="flex align-items-center gap-3">
         <div>
-          <h2 class="m-0 mt-2 font-bold">Contacts</h2>
-          <p class="m-0 font-normal font-semibold">
+          <h3 class="m-0 mt-2 font-bold">Contacts</h3>
+          <p class="m-0 font-normal font-normal">
             {{ property?.contact?.agentName }},
             {{ property?.contact?.agentPhone }},
-            {{ property?.contact?.agentMail }}
+            {{ property?.contact?.agentEmail }}
           </p>
         </div>
       </div>
+      <div
+        class="flex flex-column p-3 width-256 justify-content-between col-5"
+      ></div>
+    </div>
+    <div>
+      <div class="text-right"><p>Calculation</p></div>
+      <p-button
+        (click)="openDetail(property?.propertyId!)"
+        class="justify-content-end"
+        label="Submit"
+      ></p-button>
     </div>
   </div>
-</div>
-<div id="google-map"></div>
 
-<p-dialog header="Google Map" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-  <p>HERE WILL BE THE MAP</p>
-</p-dialog>
+  <p-dialog
+    header="Google Map"
+    [(visible)]="visible"
+    [breakpoints]="{ '960px': '75vw' }"
+    [style]="{ width: '50vw' }"
+    [draggable]="false"
+    [resizable]="false"
+  >
+    <p>HERE WILL BE THE MAP</p>
+  </p-dialog>
+</div>

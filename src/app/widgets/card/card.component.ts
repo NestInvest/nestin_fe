@@ -11,12 +11,14 @@ export class CardComponent {
   @Input() property: PropertyDetailModel = <PropertyDetailModel>{};
   visible: boolean = false;
   options: any;
+  isLoading = true;
+  failed =  false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   protected readonly open = open;
@@ -28,6 +30,7 @@ export class CardComponent {
       zoom: 12
     };
   }
+
 
   openDetail(id: number){
     this.router.navigate([`/detail/${id}`]);

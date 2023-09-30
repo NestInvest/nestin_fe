@@ -18,6 +18,7 @@ export interface PropertyDetailModel {
   contact: {
     agentName: string;
     agentPhone: string;
-    agentMail: string;
+    agentEmail: string;
   };
+  images: string[];
 }

@@ -3,24 +3,25 @@
   [style]="{
     background: '#fff',
     border: 'none',
-    padding: 0
   }"
 >
-  <ng-template pTemplate="start">
-    <a
-      routerLink="/"
-    >
-
-      <p-image [src]="'../../assets/logo_main.png'" alt="Image" width="40" imageClass="mr-2"></p-image>
+  <ng-template class="mt-2" pTemplate="start">
+    <a routerLink="/">
+      <p-image
+        [src]="'assets/logo_main.png'"
+        alt="Image"
+        width="40"
+        imageClass="mr-2"
+      ></p-image>
     </a>
   </ng-template>
   <ng-template pTemplate="end">
-    <div>
+    <div class="pl-3">
       <p-avatar
         label="U"
-        size="large"
+        size="normal"
         [style]="{ 'background-color': '#4caf4f', color: '#ffffff' }"
-        shape="square"
+        shape="circle"
       ></p-avatar>
     </div>
   </ng-template>
