@@ -31,6 +31,8 @@ import { ErrorComponent } from './widgets/error/error.component';
 import {MessagesModule} from "primeng/messages";
 import { IntroComponent } from './widgets/intro/intro.component';
 import {NgParticlesModule} from "ng-particles";
+import { NotfoundPageComponent } from './pages/error-pages/notfound-page/notfound-page.component';
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {NgParticlesModule} from "ng-particles";
     InvestPageComponent,
     ProperyDetailPageComponent,
     ErrorComponent,
-    IntroComponent
+    IntroComponent,
+    NotfoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import {NgParticlesModule} from "ng-particles";
     NgOptimizedImage,
     GalleriaModule,
     MessagesModule,
-    NgParticlesModule
+    NgParticlesModule,
+    ProgressSpinnerModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

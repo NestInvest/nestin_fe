@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../../config/config.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { PropertyDetailModel } from '../../../lib/model/property-detail.model';
 import { environment } from '../../../environments/environment';
 
@@ -11,7 +11,6 @@ import { environment } from '../../../environments/environment';
 })
 export class ProperyDetailPageComponent implements OnInit {
   isLoading = true;
-  failed = false;
   images: any[] = [];
   property: PropertyDetailModel | undefined;
   responsiveOptions: any[] | undefined;
@@ -19,6 +18,7 @@ export class ProperyDetailPageComponent implements OnInit {
   constructor(
     private configService: ConfigService,
     private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class ProperyDetailPageComponent implements OnInit {
       },
     ];
     if (id === null) {
-      this.failed = true;
+      this.goErrorPage();
       return;
     }
     this.getDetails(id);
@@ -52,8 +52,7 @@ export class ProperyDetailPageComponent implements OnInit {
         this.getImages(this.property.images);
       },
       error: () => {
-        //Error callback
-        this.failed = true;
+        this.goErrorPage();
         this.isLoading = false;
       },
     });
@@ -68,5 +67,9 @@ export class ProperyDetailPageComponent implements OnInit {
       });
     }
     console.log(this.images);
+  }
+
+  goErrorPage(){
+    this.router.navigate(['/404']);
   }
 }

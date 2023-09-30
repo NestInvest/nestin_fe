@@ -1,5 +1,5 @@
-<div class="card md:flex md:justify-content-between">
-  <div class="pr-4" *ngIf="!isLoading && !failed; else PROGRESS">
+<div class="card md:flex md:justify-content-between" *ngIf="!isLoading; else PROGRESS">
+  <div class="pr-4">
     <h1>{{ property?.propertyName }}</h1>
     <p-galleria
       [value]="images"
@@ -60,10 +60,8 @@
 </div>
 
 <ng-template #PROGRESS>
-  <div *ngIf="isLoading && !failed">
-    <h1>Loading...</h1>
-  </div>
-  <div *ngIf="failed">
-    <nes-error></nes-error>
+  <div class="center flex-column">
+    <p-progressSpinner styleClass="w-10rem h-10rem"></p-progressSpinner>
+    <p>Loading details...</p>
   </div>
 </ng-template>
