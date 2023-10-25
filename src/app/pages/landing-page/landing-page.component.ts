@@ -9,7 +9,13 @@ import {PropertyDetailModel} from "../../../lib/model/property-detail.model";
 })
 export class LandingPageComponent implements OnInit {
   allProperties: PropertyDetailModel[] | undefined;
-
+  data = [
+    {name: 'row1', tasks: [
+        {name: 'task1', from: Date.now(), to: Date.now() + 1},
+        {name: 'task2', from: Date.now(), to: Date.now() + 2}
+      ]
+    }
+  ]
   constructor(private configService: ConfigService) {
   }
 

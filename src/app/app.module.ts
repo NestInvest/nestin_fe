@@ -33,6 +33,8 @@ import { IntroComponent } from './widgets/intro/intro.component';
 import {NgParticlesModule} from "ng-particles";
 import { NotfoundPageComponent } from './pages/error-pages/notfound-page/notfound-page.component';
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import { FooterComponent } from './widgets/footer/footer.component';
+import {GanttChartModule} from "./widgets/gantt-chart/gantt-chart.module";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
     ProperyDetailPageComponent,
     ErrorComponent,
     IntroComponent,
-    NotfoundPageComponent
+    NotfoundPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
     GalleriaModule,
     MessagesModule,
     NgParticlesModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    GanttChartModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]
