@@ -1,15 +1,32 @@
-<div>
-  <ng-particles
-    class="height-256"
-    [id]="id"
-    [options]="particlesOptions"
-    [particlesInit]="particlesInit"
-  >
-  </ng-particles>
-</div>
-<div class="relative header-container w-100">
-  <div>
-    <h1>Big Header</h1>
-    <div>small header</div>
+<div class="card pb-6">
+  <div class="flex flex-nowrap justify-content-evenly">
+    <div class="col-6">
+      <h1>Unlock a World of Opportunities</h1>
+      <p>
+        Invest and be owner of the property!<br />At Spain Island - Real Estate
+        Investments We invite you to become a part of a thriving community of
+        investors who have discovered the incredible potential of real estate in
+        Spain.
+      </p>
+      <p-button label="Start investing" severity="secondary"></p-button>
+    </div>
+    <div>
+      <p-image
+        src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg"
+        alt="Image"
+        width="250"
+      ></p-image>
+    </div>
+  </div>
+  <div class="pt-8 flex flex-nowrap justify-content-evenly">
+    <div class="col-3 text-center" *ngFor="let feature of features">
+      <p-image
+        src="{{ feature.imageUrl }}"
+        alt="illustration"
+        width="250"
+      ></p-image>
+      <h2>{{ feature.title }}</h2>
+      <p>{{ feature.description }}</p>
+    </div>
   </div>
 </div>
