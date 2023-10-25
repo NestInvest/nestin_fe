@@ -5,11 +5,11 @@
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 
-
 body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
 .container { margin-left: auto; margin-right: auto; }
@@ -32,4 +32,9 @@ a.p-menubar-button{
   order: 1;
   margin-left: 0.5rem;
   margin-right: 0;
+}
+
+.fluid {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
